@@ -1,0 +1,15 @@
+includes:
+- configs/stable_training/md17/train.yml
+train: False
+bond_dev_tol: 0.5
+max_frac_unstable_threshold: 0.99
+integrator: Langevin
+results_dir: paper_stable_training_results
+eval_model: post
+temperature: 350.
+steps: 2000 # 1 picosecond per epoch
+timestep: 0.5
+n_replicas: 256
+n_dump: 2000
+n_epochs: 1000 #corresponding to 1 ns
+

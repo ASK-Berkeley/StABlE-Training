@@ -1,0 +1,56 @@
+src:  DATAPATH # source of the data
+name: water
+size: 1k
+normalize_labels: False
+checkpoint_epoch: -1 #which model to start from
+model: gemnet_t
+l_max: 3 # not used for gemnet
+log_dir: ./
+results_dir: stable_training_results
+model_dir:  qm_pretrained_checkpoints
+seed: 123
+dr: 0.24 #coarser histogram because of local environments
+max_rdf_dist: 6
+dv: 0.1
+angle_range: [0, 180]
+diameter_viz: 0.08
+gaussian_width: 0.01
+exp_name: "final"
+integrator: NoseHoover
+integrator_config: {"ttime": 20., "gamma": 0.1}
+timestep: 1
+temperature: 300.
+train: True
+eval_model: post
+stability_criterion: imd
+training_observable: bond_length_dev
+n_closest_molecules: 0 # only choose a single, central water molecule for each local neighborhood
+n_local_neighborhoods: 64
+obs_loss_weight: 1
+energy_force_loss_weight: 0
+diffusion_window: 1000
+vacf_window: 100
+ic_stddev: 0.0
+imd_tol: 1.2 #Tolerance for Minimum Intermolecular Distance
+max_frac_unstable_threshold: 0.75
+min_frac_unstable_threshold: 0
+eq_steps: 0
+steps: 1000
+n_dump: 100
+n_dump_vacf: 2
+n_replicas: 8
+minibatch_size: 4
+adjoint: False
+only_learn_if_unstable_threshold_reached: True
+only_train_on_unstable_replicas: False
+gradient_clipping: True
+grad_clip_norm_threshold: 1.0
+shuffle: True
+optimizer: SGD
+reset_probability: 0.0
+n_epochs: 500
+lr: 0.003
+max_times_reduce_lr: 2 
+
+
+

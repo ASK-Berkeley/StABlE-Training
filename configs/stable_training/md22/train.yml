@@ -1,0 +1,53 @@
+src: DATAPATH # source of the data
+name: md22
+size: 25percent
+molecule: ac_Ala3_NHMe
+normalize_labels: False
+checkpoint_epoch: -1 #which model to start from
+model: nequip
+l_max: 1
+log_dir: ./
+results_dir: stable_training_results
+model_dir: qm_pretrained_checkpoints # location of the pretrained models
+seed: 123
+dr: 0.02
+max_rdf_dist: 15
+dv: 0.1
+angle_range: [0, 180]
+exp_name: "final"
+integrator: NoseHoover
+integrator_config: {"ttime": 20., "gamma": 0.1}
+timestep: 0.5
+temperature: 500.
+train: True
+eval_model: post
+stability_criterion: bond_length_deviation
+training_observable: rdf
+obs_loss_weight: 1
+energy_force_loss_weight: 10
+diffusion_window: 1000
+vacf_window: 100
+ic_stddev: 0.0
+bond_dev_tol: 0.25
+max_frac_unstable_threshold: 0.75
+min_frac_unstable_threshold: 0.0
+eq_steps: 0
+steps: 2000 # 1 picosecond per epoch
+n_dump: 100
+n_dump_vacf: 2
+n_replicas: 128
+minibatch_size: 40
+adjoint: False
+only_learn_if_unstable_threshold_reached: True
+only_train_on_unstable_replicas: False
+gradient_clipping: True
+grad_clip_norm_threshold: 1.0
+shuffle: True
+optimizer: SGD
+reset_probability: 0.05
+n_epochs: 600
+lr: 0.001
+max_times_reduce_lr: 2 
+diameter_viz: 0.08
+gaussian_width: 0.01
+

@@ -1,0 +1,95 @@
+amp: false
+checkpoint: null
+cpu: false
+dataset:
+- grad_target_mean: -3.5600233069761502e-09
+  grad_target_std: 1.25220260734245
+  name: water
+  normalize_labels: true
+  size: 1k
+  src: /data/sanjeevr/water/1k/train
+  target_mean: -26.147620446227215
+  target_std: 0.6255959083458403
+- src: /data/sanjeevr/water/1k/val
+distributed: false
+distributed_backend: nccl
+distributed_port: 13356
+identifier: ''
+is_debug: false
+local_rank: 0
+logger:
+  name: wandb
+  project: mdbench
+mode: train
+model:
+  activation: silu
+  cbf:
+    name: spherical_harmonics
+  cutoff: 5.0
+  direct_forces: false
+  emb_size_atom: 128
+  emb_size_bil_trip: 64
+  emb_size_cbf: 16
+  emb_size_edge: 128
+  emb_size_rbf: 16
+  emb_size_trip: 64
+  envelope:
+    exponent: 5
+    name: polynomial
+  extensive: true
+  max_neighbors: 50
+  name: gemnet_t
+  num_after_skip: 1
+  num_atom: 2
+  num_before_skip: 1
+  num_blocks: 4
+  num_concat: 1
+  num_radial: 6
+  num_spherical: 7
+  otf_graph: true
+  output_init: HeOrthogonal
+  rbf:
+    name: gaussian
+  regress_forces: true
+  scale_file: configs/pretraining/water/gemnet-T-scale.json
+noddp: false
+optim:
+  batch_size: 1
+  clip_grad_norm: 10
+  early_stopping_lr: 1.0e-06
+  early_stopping_time: 604800
+  ema_decay: 0.999
+  energy_coefficient: 0.001
+  eval_batch_size: 1
+  factor: 0.8
+  force_coefficient: 0.999
+  loss_force: l2mae
+  lr_initial: 0.001
+  max_epochs: 1000
+  min_lr: 1.0e-06
+  num_workers: 4
+  optimizer: AdamW
+  optimizer_params:
+    amsgrad: true
+    eps: 1.0e-07
+    weight_decay: 2.0e-06
+  patience: 5
+  scheduler: ReduceLROnPlateau
+print_every: 200
+run_dir: MODELPATH/
+seed: 0
+submit: false
+summit: false
+task:
+  dataset: lmdb
+  description: Regressing to energies and forces
+  eval_on_free_atoms: true
+  grad_input: atomic forces
+  labels:
+  - potential energy
+  metric: mae
+  train_on_free_atoms: true
+  type: regression
+timestamp_id: null
+trainer: trainer
+world_size: 1

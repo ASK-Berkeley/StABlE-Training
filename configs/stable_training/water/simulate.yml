@@ -1,0 +1,20 @@
+includes:
+- configs/stable_training/water/train.yml
+train: False
+dr: 0.012 #coarser histogram because of local environments
+stability_criterion: rdf
+imd_tol: 3.0 # Tolerance for RDF MAE criterion
+max_frac_unstable_threshold: 0.95
+eval_model: post_cycle1_epoch10
+results_dir: paper_stable_training_results
+temperature: 300.
+timestep: 1
+eq_steps: 0
+steps: 10000 # 10 ps averaging window for computing RDF
+n_dump: 1000
+n_replicas: 5
+n_epochs: 100 # 1 ns
+
+
+
+

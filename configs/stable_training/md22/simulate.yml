@@ -1,0 +1,13 @@
+includes:
+- configs/stable_training/md22/train.yml
+train: False
+bond_dev_tol: 0.5
+max_frac_unstable_threshold: 0.99
+eval_model: post_cycle1
+results_dir: paper_stable_training_results
+temperature: 500.
+timestep: 0.5
+steps: 2000 # 1 picosecond per epoch
+n_replicas: 48
+n_dump: 2000
+n_epochs: 300 #corresponding to 300 ps
