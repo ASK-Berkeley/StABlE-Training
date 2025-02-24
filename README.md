@@ -1,4 +1,4 @@
-# Stability-Aware Training of Machine Learning Force Fields with Differentiable Boltzmann Estimators [TMLR 2025]
+# [TMLR 2025] Stability-Aware Training of Machine Learning Force Fields with Differentiable Boltzmann Estimators
 <p align="center">
 <a href="https://arxiv.org/abs/2402.13984"><img src="https://img.shields.io/badge/arXiv-b31b1b?style=for-the-badge&logo=arxiv" alt="arXiv"/></a>
 <!-- <a href="https://www.youtube.com/watch?v=hCVXXdJZJFo"><img src="https://img.shields.io/badge/Watch%20Talk-FF0000?logo=youtube&logoColor=white" alt="LoGaG Talk"/></a> -->
