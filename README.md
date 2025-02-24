@@ -7,7 +7,7 @@
 </a>
 </p>
 
-We introduce Stability-Aware Boltzmann Estimator (StABlE) Training for Machine Learning Force Fields (MLFFs), which enables refinement of MLFFs using system observables (obtained via high-fidelity simulation or experiment) to improve their stability in long molecular dynamics (MD) simulations. Our method enables MD simulations that are stable for over 10x longer than those produced by unrefined MLFF, eliminating unphysical events such as non-reactive bond breaking and atomic collisions, and significantly improves the accuracy of estimated simulation observables, such as radial distribution functions and diffusivity coefficients.
+We introduce **Stability-Aware Boltzmann Estimator (StABlE) Training** for Machine Learning Force Fields (MLFFs), which enables refinement of MLFFs using system observables (obtained via high-fidelity simulation or experiment) to improve their stability in long molecular dynamics (MD) simulations. Our method enables MD simulations that are stable for over 10x longer than those produced by unrefined MLFF, eliminating unphysical events such as non-reactive bond breaking and atomic collisions, and significantly improves the accuracy of estimated simulation observables, such as radial distribution functions and diffusivity coefficients.
 
 <p align="center">
 <img src="assets/instability_progression.png" alt=""/>
