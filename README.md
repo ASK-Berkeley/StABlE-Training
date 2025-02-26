@@ -58,12 +58,13 @@ We have provided checkpoints for all of the pretrained models in ```qm_pretraine
 If you use this code in your research, please cite our paper.
 
 ```bibtex
-@misc{raja2024stabilityawaretrainingmachinelearning,
+@article{raja2025stabilityawaretrainingmachinelearning,
       title={Stability-Aware Training of Machine Learning Force Fields with Differentiable Boltzmann Estimators}, 
       author={Sanjeev Raja and Ishan Amin and Fabian Pedregosa and Aditi S. Krishnapriyan},
-      year={2024},
+      year={2025},
+      journal={Transactions on Machine Learning Research},
       eprint={2402.13984},
       archivePrefix={arXiv},
       primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2402.13984}, 
+      url={https://arxiv.org/abs/2402.13984} 
 }
