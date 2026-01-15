@@ -7,12 +7,12 @@ with Differentiable Boltzmann Estimators" (https://arxiv.org/abs/2402.13984).
 3. Water from Forces are Not Enough (https://arxiv.org/abs/2210.07237)
 
 """
-
+# 导入模块
 import os
 import subprocess
 import argparse
 
-
+# 定义程序入口--可通过运行python download_data.py --download_path /your/custom/path 来改变下载位置
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -26,20 +26,20 @@ if __name__ == "__main__":
     # Aspirin 1k (MD17)
     command = [
         "python",
-        "data/md17.py",
+        "data/md17.py",   # 调用脚本
         "--molecule",
-        "aspirin",
+        "aspirin",   # 指定分子
         "--data_path",
         os.path.join(args.download_path, "md17"),
         "--db_path",
-        os.path.join(args.download_path, "md17"),
+        os.path.join(args.download_path, "md17"),  # 数据下载路径
         "--size",
-        "1k",
+        "1k",# 样本量
     ]
 
     subprocess.run(command, check=True)
 
-    # Aspirin (MD17) 1k Contiguous
+    # Aspirin (MD17) 1k Contiguous----连续数据集，即数据按时间序列连续切分，不是随机的
     command = [
         "python",
         "data/md17.py",
